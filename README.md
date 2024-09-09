@@ -1,0 +1,2 @@
+# SpecSoftware
+Speciális Szoftverek
