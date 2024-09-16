@@ -1,0 +1,102 @@
+\documentclass[12pt, twoside]{article}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{lipsum}
+
+\setlength{\headheight}{15pt} % A "headheight too small" figyelmeztetés elkerülése
+
+% Oldalstílus beállítása
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\leftmark} % Section
+\fancyhead[RO]{\rightmark} % Subsection
+\fancyhead[RE,LO]{\thepage} % Oldalszám a külső sarkokban
+\fancyfoot[C]{Miskolci Egyetem} % Lábléc közepére az egyetem neve
+\renewcommand{\headrulewidth}{0.4pt} % Fejléc alatt választóvonal
+\renewcommand{\footrulewidth}{0.4pt} % Lábléc fölé választóvonal
+
+% Saját lista típus definíciója
+\newlist{myenum}{enumerate}{6}
+\setlist[myenum,1]{label=(\arabic*)}
+\setlist[myenum,2]{label=(\alph*)}
+\setlist[myenum,3]{label=(\roman*)}
+\setlist[myenum,4]{label=(\Alph*)}
+\setlist[myenum,5]{label=(\Roman*)}
+\setlist[myenum,6]{label=(\arabic*)}
+
+\begin{document}
+
+\title{1. Órai feladat}
+\maketitle
+\thispagestyle{plain} 
+\fancyfoot[RO]{\thepage}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% 1. Feladat
+\pagestyle{myheadings}
+\markboth{Gecse Tamás}{Miskolci Egyetem}
+
+\section{Fejezet címe}
+Ez egy példa szöveg, ahol a fejléc páros oldalán a név, páratlan oldalán az egyetem neve jelenik meg.
+
+\newpage
+
+% 2. Feladat
+\section{Fejezet 2}
+\lipsum[1-4]
+
+\newpage
+
+% 3. Feladat
+\section{Egysoros lista}
+
+\newlist{anditemize}{itemize}{1}
+\setlist[anditemize,1]{label=--}
+
+\makeatletter
+\newcommand{\lastitem}{\@ifnextchar\@endpefalse\relax és }
+\makeatother
+
+\begin{anditemize}
+    \item elem 1
+    \item elem 2
+    \lastitem\item elem 3
+\end{anditemize}
+
+\newpage
+
+% 4. Feladat
+\section{Számozott listák}
+
+\begin{myenum}
+    \item Első elem
+    \item Második elem
+    \begin{myenum}
+        \item Beágyazott első elem
+        \item Beágyazott második elem
+    \end{myenum}
+\end{myenum}
+
+\lipsum[5]
+
+\begin{enumerate}
+    \item Negyedik elem
+    \item Ötödik elem
+    \item[ ] Kihagyott számozott elem
+\end{enumerate}
+
+\newpage
+
+% 5. Feladat
+\section{Leíró lista}
+
+\begin{description}
+    \item[] Üres címke
+    \lipsum[6]
+    \item[Kicsi] Rövid címke
+    \lipsum[7]
+    \item[Hosszú címke] Egy nagyon hosszú címke, ami akár több sorban is megjelenhet.
+    \lipsum[8]
+\end{description}
+
+\end{document}

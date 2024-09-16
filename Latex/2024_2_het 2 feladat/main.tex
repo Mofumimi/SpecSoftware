@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{varioref}
+\usepackage{cleveref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=red,
+    urlcolor=cyan
+}
+
+\setlength{\headheight}{15pt}
+
+\title{2. Feladat}
+\author{Gecse Tamás}
+\date{}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+% 1. Feladat
+\section{1. Feladat (Kereszthivatkozások)}
+
+% b) feladat
+\lipsum[1] 
+\label{sec:label_zagyva} 
+\lipsum[2]
+\subsection{Mélyebb szakasz}
+\lipsum[3]
+\subsubsection{Még mélyebb szakasz}
+\label{sec:deep} 
+\lipsum[4]
+
+\appendix
+\section{Függelék}
+\label{sec:appendix}
+\lipsum[5]
+
+\section{Leíró lista}
+\begin{description}
+    \item[Elem 1] \label{desc-item} Leírás az első elemhez.
+    \item[Elem 2] Leírás a második elemhez.
+    \item[Elem 3] Leírás a harmadik elemhez.
+\end{description}
+
+\section{Számozott lista}
+\begin{enumerate}
+    \item Első elem \label{numbered-item}
+    \item Második elem
+    \item Harmadik elem
+\end{enumerate}
+
+\begin{enumerate}
+    \item[] Számozatlan elem \label{unnumbered-item}
+\end{enumerate}
+
+% c) feladat
+\newpage
+\section{Kereszthivatkozások tesztelése}
+Az alábbiakban különböző kereszthivatkozásokat találhatunk:
+\begin{itemize}
+    \item Hivatkozás zagyva szövegre: \ref{sec:label_zagyva}, \pageref{sec:label_zagyva}. oldal.
+    \item Hivatkozás mélyebb szakaszra: \ref{sec:deep}, \pageref{sec:deep}. oldal.
+    \item Hivatkozás a függelékhez: \ref{sec:appendix}, \pageref{sec:appendix}. oldal.
+    \item Hivatkozás leíró lista elemére: \ref{desc-item}, \pageref{desc-item}. oldal.
+    \item Hivatkozás számozott lista elemére: \ref{numbered-item}, \pageref{numbered-item}. oldal.
+    \item Hivatkozás számozatlan elemre: \ref{unnumbered-item}, \pageref{unnumbered-item}. oldal.
+\end{itemize}
+
+% d) feladat
+
+% e) feladat
+Weboldal hivatkozás: \href{https://www.example.com}{Példa Weboldal}
+
+% f) feladat
+
+% g) feladat
+Az \autoref parancs: \autoref{sec:deep}.
+Az \autopageref parancs: \autopageref{sec:deep}.
+
+\newpage
+% 2. Feladat 
+\section*{2. Feladat (Számozatlan szakasz)}
+\label{sec:szamozatlan}
+\lipsum[1-8] 
+
+\newpage
+% 3. Feladat (\input vs \include)
+\section{3. Feladat (\\input vs \\include)}
+\input{section1.tex}
+\input{section2.tex}
+
+\newpage
+% 4. Szorgalmi feladat (Hivatkozások automatizálása)
+\section{4. Szorgalmi feladat (Hivatkozások automatizálása)}
+Az \texttt{varioref} csomag hivatkozása: \vref{sec:deep}.
+Az \texttt{cleveref} csomag használata: \cref{sec:deep}.
+
+\end{document}
