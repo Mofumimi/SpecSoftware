@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Tétel és Lemma környezetek definiálása
+\newtheorem{theorem}{Tétel}
+\newtheorem{lemma}[theorem]{Lemma}
+
+% Definíció section-önként számozva
+\theoremstyle{definition}
+\newtheorem{definition}{Definíció}[section]
+
+% Makrók
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\E}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\CE}[2]{\mathbb{E}\left[#1 \mid #2\right]}
+
+\begin{document}
+
+% 1. Feladat (Tételkörnyezetek)
+\section{Tételkörnyezetek}
+
+\begin{theorem}
+Ez egy névtelen tétel.
+\end{theorem}
+
+\begin{theorem}[Példa szerző]
+Ez egy tétel szerzővel.
+\end{theorem}
+
+\begin{lemma}
+Ez egy Lemma.
+\end{lemma}
+
+\begin{proof}
+Ez a tétel bizonyítása.
+\end{proof}
+
+\begin{proof}[Lemma bizonyítása]
+Ez a bizonyítás hivatkozik a Lemmára.
+\end{proof}
+
+% 2. Feladat (Matematikai formulák A-tól Z-ig)
+\section{Matematikai formulák}
+
+Az \( \frac{1}{n^2} \) sorösszege a következő:
+
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}.
+\]
+
+A faktoriális definíciója:
+
+\[
+n! := \prod_{k=1}^{n} k = 1 \cdot 2 \cdot \ldots \cdot n.
+\]
+
+Legyen \( 0 \leq k \leq n \). A binomiális együttható:
+
+\[
+\binom{n}{k} := \frac{n!}{k!(n-k)!}.
+\]
+
+Az előjel- (szignum) függvény a következő:
+
+\[
+\text{sgn}(x) := 
+\begin{cases} 
+1 & \text{ha } x > 0, \\
+0 & \text{ha } x = 0, \\
+-1 & \text{ha } x < 0.
+\end{cases}
+\]
+
+% 3. Szorgalmi feladat (Matematikai makrók)
+\section{Matematikai makrók}
+
+Az \texttt{arg max} operátor definíciója:
+
+\[
+x^* := \argmax_{x \in [0,1]} x \log_2(x)
+\]
+
+A felső egészrész függvény:
+
+\[
+\left\lceil \frac{5}{3} \right\rceil
+\]
+
+Várható érték makró használata:
+
+\[
+\E{X_i}
+\]
+
+Feltételes várható érték makró használata:
+
+\[
+\CE{X_i}{X_j}
+\]
+
+Toronyszabály formulája:
+
+\[
+\mathbb{E}\left[\sum_{i=1}^N X_i\right] = \mathbb{E}\left[\mathbb{E}\left[\sum_{i=1}^N X_i \mid N\right]\right]
+\]
+
+% 4. Feladat (Binomiális tétel)
+\section{Binomiális tétel}
+
+A binomiális tétel induktív bizonyítása align és split használatával:
+
+\begin{align}
+(a+b)^{n+1} &= (a+b) \cdot \left( \sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k \right) \label{eq:binom1}\\
+&= \sum_{k=0}^{n} \binom{n}{k} a^{(n+1)-k} b^k + \sum_{k=1}^{n+1} \binom{n}{k-1} a^{(n+1)-k} b^k \label{eq:binom2}\\
+&= \binom{n+1}{0} a^{n+1} b^0 + \sum_{k=1}^{n} \binom{n+1}{k} a^{(n+1)-k} b^k + \binom{n+1}{n+1} a^0 b^{n+1} \label{eq:binom3}\\
+&= \sum_{k=0}^{n+1} \binom{n+1}{k} a^{(n+1)-k} b^k \label{eq:binom4}
+\end{align}
+
+\end{document}
