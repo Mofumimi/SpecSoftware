@@ -1,0 +1,30 @@
+\documentclass{article}
+
+% BibTeX rész
+\bibliographystyle{plain} % Tetszőleges stílus
+\bibliography{ltx} % A bibliográfia forrásfájl
+
+\usepackage[backref]{hyperref} % Hyperref csomag engedélyezése
+
+\begin{document}
+
+\section{Bevezetés}
+Ebben a dokumentumban példákat láthatunk a hivatkozásokra. Itt van egy hivatkozás \cite{knuth84}, valamint egy másik hivatkozás \cite{lamport94}.
+
+% Irodalomjegyzék generálása (BibTeX)
+\printbibliography
+
+\newpage % Új oldal a biblatex résznek
+
+% biblatex beállítások
+\usepackage[backend=biber, style=authoryear]{biblatex} % biblatex csomag betöltése
+\addbibresource{ltx.bib} % A bibliográfia forrásfájl
+
+% Bevezetés (biblatex)
+\section{Bevezetés (biblatex)}
+Itt is hivatkozhatunk a forrásokra, például \cite{abrharber03} vagy \cite{bujfaz}.
+
+% Irodalomjegyzék generálása (biblatex)
+\printbibliography
+
+\end{document}

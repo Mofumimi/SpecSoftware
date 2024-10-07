@@ -1,0 +1,180 @@
+\documentclass[12pt, aspectratio=169]{beamer}
+\PassOptionsToPackage{table}{xcolor}
+
+\title{0. Dia}
+\author{Gecse Tamás}
+\date{\today}
+
+\begin{document}
+
+% 1. Feladat h) Címdia a dokumentum elején
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% 3. Feladat a) Section 1
+\section{Első Feladatsor}
+
+% Tartalomjegyzék a section elején
+\begin{frame}
+    \frametitle{Tartalomjegyzék}
+    \tableofcontents[currentsection, hideothersubsections]
+\end{frame}
+
+% 1. Feladat d) Frame cím és alcím
+\begin{frame}
+    \frametitle{Frame címe}
+    \framesubtitle{Frame alcíme}
+    Néhány szó a tartalomról.
+\end{frame}
+
+% 1. Feladat e) Több dummy frame
+\begin{frame}
+    \frametitle{Második Frame}
+    Itt egy másik tartalom található.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Harmadik Frame}
+    Egy újabb tartalom.
+\end{frame}
+
+% 1. Feladat f) Verbatim szöveg elhelyezése
+\begin{frame}[fragile]
+    \frametitle{Verbatim Példa}
+    \begin{verbatim}
+        Ez egy verbatim szöveg.
+    \end{verbatim}
+\end{frame}
+
+% 1. Feladat g) Több bekezdésnyi zagyva szöveg és automatikus tördelés
+\begin{frame}[allowframebreaks]
+    \frametitle{Több bekezdés}
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+\end{frame}
+
+% 2. Feladat a) Kétoszlopos dia
+\begin{frame}
+    \frametitle{Kétoszlopos Dia}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item Első pont
+            \item Második pont
+        \end{itemize}
+        \begin{enumerate}
+            \item Első elem
+            \item Második elem
+        \end{enumerate}
+        
+        \column{0.5\textwidth}
+        \includegraphics[width=\textwidth]{kep.png}
+        \caption{Kép felirattal}
+    \end{columns}
+\end{frame}
+
+% 2. Feladat b) block, exampleblock, alertblock
+\begin{frame}
+    \frametitle{Block Tesztelés}
+    
+    \begin{block}{Block példa}
+        Ez egy normál block.
+    \end{block}
+    
+    \begin{exampleblock}{Példa block}
+        Ez egy exampleblock.
+    \end{exampleblock}
+    
+    \begin{alertblock}{Figyelmeztető block}
+        Ez egy alertblock.
+    \end{alertblock}
+    
+    \begin{block}{}
+        Ez egy cím nélküli block.
+    \end{block}
+\end{frame}
+
+% 2. Feladat c) theorem és proof
+\begin{frame}
+    \frametitle{Tétel és Bizonyítás}
+    \begin{theorem}
+        Ez egy tétel.
+    \end{theorem}
+    
+    \begin{proof}
+        Ez a bizonyítás szövege.
+    \end{proof}
+\end{frame}
+
+% 2. Feladat d) semiverbatim használata
+\begin{frame}[fragile]
+    \frametitle{Semiverbatim Példa}
+    \begin{semiverbatim}
+        \textcolor{red}{\LaTeX} kód példa itt.
+    \end{semiverbatim}
+\end{frame}
+
+% 3. Feladat a) Section 2
+\section{Második Feladatsor}
+
+\begin{frame}
+    \frametitle{Tartalomjegyzék}
+    \tableofcontents[currentsection, hideothersubsections]
+\end{frame}
+
+% 4. Feladat a) Beamer theme és color theme kombinációk
+\begin{frame}
+    \frametitle{Beamer Theme Teszt}
+    Ez a frame a különböző beamer témák tesztelésére készült.
+\end{frame}
+
+% 5. Feladat a) \pause parancs tesztelése
+\begin{frame}
+    \frametitle{Pause Teszt}
+    Első pont.
+    \pause
+    Második pont.
+    \pause
+    Harmadik pont.
+\end{frame}
+
+% 5. Feladat b) \item<> tesztelése
+\begin{frame}
+    \frametitle{Elemek megjelenítése sorrendben}
+    \begin{itemize}
+        \item<3> Első elem
+        \item<2> Második elem
+        \item<1> Harmadik elem
+    \end{itemize}
+\end{frame}
+
+% 5. Feladat c) Tétel és bizonyítás késleltetett megjelenítése
+\begin{frame}
+    \frametitle{Tétel Késleltetve}
+    \begin{theorem}
+        Ez egy újabb tétel.
+    \end{theorem}
+    \pause
+    \begin{proof}
+        A bizonyítás csak később jelenik meg.
+    \end{proof}
+\end{frame}
+
+% 5. Feladat e) Képek váltása ugyanazon a helyen
+\begin{frame}
+    \frametitle{Képek váltása}
+    \only<1>{\includegraphics[width=\textwidth]{getto.png}}
+    \only<2>{\includegraphics[width=\textwidth]{1.jpg}}
+\end{frame}
+
+% 6. Feladat a) Áttűnés tesztelése
+\begin{frame}
+    \frametitle{Áttűnés Teszt}
+    Különböző áttűnések frame-ek között.
+\end{frame}
+
+\end{document}
