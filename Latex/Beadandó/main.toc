@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Bevezetés}{3}{0}{1}
+\beamer@sectionintoc {2}{Főbb Előnyök}{4}{0}{2}
+\beamer@sectionintoc {3}{Képek és Grafikák}{5}{0}{3}
+\beamer@sectionintoc {4}{Programkód}{6}{0}{4}
+\beamer@sectionintoc {5}{Matematikai Formulák}{7}{0}{5}
+\beamer@sectionintoc {6}{Kémiai Képletek és Ábrák}{8}{0}{6}
+\beamer@sectionintoc {7}{Sakkállás Példa}{10}{0}{7}
+\beamer@sectionintoc {8}{Videó Példa}{11}{0}{8}
+\beamer@sectionintoc {9}{Kereszthivatkozások}{12}{0}{9}
+\beamer@sectionintoc {10}{TikZ Grafika}{13}{0}{10}
+\beamer@sectionintoc {11}{Irodalomjegyzék}{14}{0}{11}
